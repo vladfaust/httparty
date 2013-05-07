@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>HTTParty by jnunemaker</title>
-    
+
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -17,15 +17,22 @@
       <header>
         <h1>HTTParty</h1>
         <p>Makes http fun again!</p>
+
         <p class="view"><a href="https://github.com/jnunemaker/httparty">View the Project on GitHub <small>jnunemaker/httparty</small></a></p>
+
+
         <ul>
           <li><a href="https://github.com/jnunemaker/httparty/zipball/master">Download <strong>ZIP File</strong></a></li>
           <li><a href="https://github.com/jnunemaker/httparty/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/jnunemaker/httparty">Fork On <strong>GitHub</strong></a></li>
+          <li><a href="https://github.com/jnunemaker/httparty">View On <strong>GitHub</strong></a></li>
         </ul>
       </header>
       <section>
-        <h2>Install</h2>
+        <h1>httparty</h1>
+
+<p>Makes http fun again!</p>
+
+<h2>Install</h2>
 
 <pre><code>gem install httparty
 </code></pre>
@@ -37,8 +44,7 @@
 <li>You like to party!</li>
 </ul><h2>Examples</h2>
 
-<div class="highlight">
-<pre><span class="c1"># Use the class methods to get down to business quickly</span>
+<div class="highlight"><pre><span class="c1"># Use the class methods to get down to business quickly</span>
 <span class="n">response</span> <span class="o">=</span> <span class="no">HTTParty</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'http://twitter.com/statuses/public_timeline.json'</span><span class="p">)</span>
 <span class="nb">puts</span> <span class="n">response</span><span class="o">.</span><span class="n">body</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">code</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">message</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">inspect</span>
 
@@ -63,16 +69,14 @@
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-    <span class="n">options</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:query</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="ss">:status</span> <span class="o">=&gt;</span> <span class="n">text</span><span class="p">},</span> <span class="ss">:basic_auth</span> <span class="o">=&gt;</span> <span class="vi">@auth</span> <span class="p">}</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:body</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="ss">:status</span> <span class="o">=&gt;</span> <span class="n">text</span><span class="p">},</span> <span class="ss">:basic_auth</span> <span class="o">=&gt;</span> <span class="vi">@auth</span> <span class="p">}</span>
     <span class="nb">self</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">'/statuses/update.json'</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
 <span class="n">twitter</span> <span class="o">=</span> <span class="no">Twitter</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">config</span><span class="o">[</span><span class="s1">'email'</span><span class="o">]</span><span class="p">,</span> <span class="n">config</span><span class="o">[</span><span class="s1">'password'</span><span class="o">]</span><span class="p">)</span>
 <span class="n">pp</span> <span class="n">twitter</span><span class="o">.</span><span class="n">timeline</span>
-</pre>
-</div>
-
+</pre></div>
 
 <p>See the <a href="http://github.com/jnunemaker/httparty/tree/master/examples">examples directory</a> for even more goodies.</p>
 
