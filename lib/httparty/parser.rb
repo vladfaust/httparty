@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 module HTTParty
   # The default parser used by HTTParty, supports xml, json, html, csv and
   # plain text.
